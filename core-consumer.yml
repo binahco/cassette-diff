@@ -1,0 +1,23 @@
+# Manifest del consumidor. Contrato e inventario a la vez (ARCHITECTURE.md §2.1).
+week: 19
+name: cassette-diff
+core_version: 1.2.0
+
+reused_modules:
+  - llm-client
+  - schema-validate
+  - secure-base
+  - test-kit
+  - cache-ratelimit
+  - diff-engine
+
+new_surface:
+  - "deriva del modelo: dos grabaciones del mismo prompt+entrada se comparan campo a campo con diff-engine"
+  - "seed de diff-engine (C12, sem. 19): comparación estructural determinista con volátiles declarados"
+  - "demo-record: graba el par (sesión a, sesión b) del mismo caso y mide la deriva real del modelo"
+  - "veredicto por similitud textual con umbral explícito — lo semántico queda para vector-core (C11)"
+
+estimated_new_surface: 25
+
+# Presupuesto máximo de evals en USD por semana (ARCHITECTURE.md §8.1).
+eval_budget_usd: 2.0

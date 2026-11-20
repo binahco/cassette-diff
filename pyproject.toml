@@ -1,0 +1,25 @@
+[project]
+name = "llm-cassette-diff"
+version = "0.1.0"
+description = "cassette-diff: deriva del modelo entre dos grabaciones del mismo prompt — diff-engine + narración LLM validada (semana 19)."
+requires-python = ">=3.12"
+dependencies = [
+    "llm-dev-core",
+    "PyYAML>=6,<7",
+]
+
+[tool.uv.sources]
+llm-dev-core = { path = "../llm-dev-core", editable = true }
+
+[project.scripts]
+cassette-diff = "cassette_diff.main:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cassette_diff"]
+
+[dependency-groups]
+dev = ["pytest>=8,<9"]
